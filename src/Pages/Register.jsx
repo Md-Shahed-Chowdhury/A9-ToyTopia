@@ -3,7 +3,9 @@ import { FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router";
 
 const Register = () => {
-    
+    const handleRegister = () =>{
+      console.log('hello')
+    }
   return (
     <div>
       
@@ -50,7 +52,7 @@ const Register = () => {
                     placeholder="Password"
                     name="password"
                   />
-                  <button className="btn btn-neutral mt-4">Register</button>
+                  <button className="btn btn-neutral mt-4" onSubmit={handleRegister}>Register</button>
                 </fieldset>
               </form>
             </div>

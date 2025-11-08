@@ -13,6 +13,14 @@ const firebaseConfig = {
   messagingSenderId:import.meta.env.VITE_messagingSenderId ,
   appId: import.meta.env.VITE_appId
 };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyC4zL2lI_T0NqDGmQj7W3UvrnvLk3kHbWk",
+//   authDomain: "a9-toytopia.firebaseapp.com",
+//   projectId: "a9-toytopia",
+//   storageBucket: "a9-toytopia.firebasestorage.app",
+//   messagingSenderId: "962302820725",
+//   appId: "1:962302820725:web:ef6518eeffb64a42c4133c"
+// };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
