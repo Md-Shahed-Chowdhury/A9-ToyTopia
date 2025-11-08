@@ -1,9 +1,11 @@
-import React from 'react';
+
 import { NavLink } from 'react-router';
 import { FaGoogle } from "react-icons/fa";
+import { MyContext } from '../Provider/ContextProvider';
 
 
 const Login = () => {
+  
     return (
         <div>
               

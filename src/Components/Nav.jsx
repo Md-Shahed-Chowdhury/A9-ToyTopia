@@ -1,8 +1,10 @@
-import React from 'react';
+
 import { NavLink } from 'react-router';
 import '../App.css';
 
+
 const Nav = () => {
+  
     return (
         <div className="navbar bg-info  shadow-sm">
   <div className="navbar-start">
