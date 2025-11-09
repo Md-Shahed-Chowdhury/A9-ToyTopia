@@ -20,7 +20,7 @@ const Register = () => {
       setUser(CurrentUser);
     }).
     catch((error)=>{
-      alert(error.message);
+      toast(error.message);
     });
   }
     const handleRegister = (e) =>{
@@ -42,10 +42,10 @@ const Register = () => {
             console.log("Profile Updated");
             setUser({...CurrentUser,displayName:name,photoURL:photoUrl});
           }).
-          catch((error)=>alert(error.message));
+          catch((error)=>toast(error.message));
         }).
         catch((error)=>{
-          alert(error.message);
+          toast(error.message);
         });
         
     }
@@ -73,6 +73,7 @@ const Register = () => {
                     className="input"
                     placeholder="Name"
                     name="name"
+                    required
                   />
                   <label className="label">Email</label>
                   <input
@@ -80,6 +81,7 @@ const Register = () => {
                     className="input"
                     placeholder="Email"
                     name="email"
+                    required
                   />
                   <label className="label">Photo URL</label>
                   <input
@@ -87,6 +89,7 @@ const Register = () => {
                     className="input"
                     placeholder="Photo"
                     name="photoUrl"
+                    required
                   />
                   <label className="label">Password</label>
                   <input
@@ -94,6 +97,7 @@ const Register = () => {
                     className="input"
                     placeholder="Password"
                     name="password"
+                    required
                   />
                   <button className="btn btn-neutral mt-4" >Register</button>
                 </fieldset>

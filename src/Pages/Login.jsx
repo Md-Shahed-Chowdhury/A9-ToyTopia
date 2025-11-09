@@ -2,11 +2,12 @@
 import { NavLink } from 'react-router';
 import { FaGoogle } from "react-icons/fa";
 import { MyContext } from '../Provider/ContextProvider';
-import { use } from 'react';
+import { use, useState } from 'react';
 import { toast } from 'react-toastify';
 
 
 const Login = () => {
+  const [email,setEmail]=useState(null);
   const {emailLogin,googleLogin,setUser} = use(MyContext);
 
   const handleLogin = (e) =>{
@@ -21,7 +22,7 @@ const Login = () => {
       toast("Login Successful");
     }).
     catch((error)=>{
-      alert(error.message);
+      toast(error.message);
     });
 }
 
@@ -35,7 +36,7 @@ const handleGoogleLogin = () =>{
       setUser(CurrentUser);
     }).
     catch((error)=>{
-      alert(error.message);
+      toast(error.message);
     });
   }
     return (
@@ -63,6 +64,8 @@ const handleGoogleLogin = () =>{
                             className="input"
                             placeholder="Email"
                             name="email"
+                            required
+                            onChange={(e)=>setEmail(e.target.value)}
                           />
                           
                           <label className="label">Password</label>
@@ -71,8 +74,9 @@ const handleGoogleLogin = () =>{
                             className="input"
                             placeholder="Password"
                             name="password"
+                            required
                           />
-                          <div><a className="link link-hover">Forgot password?</a></div>
+                          <div><NavLink className="link link-hover" to="/forget-password" state={email}>Forgot password?</NavLink></div>
                           <button className="btn btn-neutral mt-4">Login</button>
                         </fieldset>
                       </form>
