@@ -1,9 +1,12 @@
 
 import { NavLink } from 'react-router';
 import '../App.css';
+import { use } from 'react';
+import { MyContext } from '../Provider/ContextProvider';
 
 
 const Nav = () => {
+  const {user} = use(MyContext);
   
     return (
         <div className="navbar bg-info  shadow-sm">
@@ -30,6 +33,7 @@ const Nav = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    {user && <span className="mr-4">Hello, {user.displayName}</span>}
     <a className="btn">Login</a>
   </div>
 </div>

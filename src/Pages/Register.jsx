@@ -1,10 +1,38 @@
 
+import { use } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router";
+import { MyContext } from "../Provider/ContextProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../Auth/Auth.init";
 
 const Register = () => {
-    const handleRegister = () =>{
-      console.log('hello')
+  const {emailRegister,setUser} = use(MyContext);
+    const handleRegister = (e) =>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photoUrl = form.photoUrl.value;
+        const password = form.password.value;
+        emailRegister(email,password).
+        then((user)=>
+        { const CurrentUser = user.user;
+          
+          updateProfile(auth.currentUser,{
+            displayName:name,
+            photoURL:photoUrl
+          }).
+          then(()=>{
+            console.log("Profile Updated");
+            setUser({...CurrentUser,displayName:name,photoURL:photoUrl});
+          }).
+          catch((error)=>alert(error.message));
+        }).
+        catch((error)=>{
+          alert(error.message);
+        });
+        
     }
   return (
     <div>
@@ -22,7 +50,7 @@ const Register = () => {
               You can explore interesting toys here.
             </p>
             <div className="card-body">
-              <form >
+              <form onSubmit={handleRegister} >
                 <fieldset className="fieldset">
                   <label className="label">Name</label>
                   <input
@@ -52,7 +80,7 @@ const Register = () => {
                     placeholder="Password"
                     name="password"
                   />
-                  <button className="btn btn-neutral mt-4" onSubmit={handleRegister}>Register</button>
+                  <button className="btn btn-neutral mt-4" >Register</button>
                 </fieldset>
               </form>
             </div>
