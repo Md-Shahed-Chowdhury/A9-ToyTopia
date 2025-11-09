@@ -3,10 +3,20 @@ import { NavLink } from 'react-router';
 import '../App.css';
 import { use } from 'react';
 import { MyContext } from '../Provider/ContextProvider';
+import { toast } from 'react-toastify';
 
 
 const Nav = () => {
-  const {user} = use(MyContext);
+  const {user,logOut} = use(MyContext);
+  const handleLogOut = () =>{
+    logOut().
+    then(()=>{
+      toast("Logged Out Successfully");
+    }).
+    catch((error)=>{
+      toast(error.message);
+    });
+  }
   
     return (
         <div className="navbar bg-info  shadow-sm">
@@ -33,8 +43,9 @@ const Nav = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    {user && <span className="mr-4">Hello, {user.displayName}</span>}
-    <a className="btn">Login</a>
+    {user && <div className='rounded-full w-10 mr-2'><img src={user.photoURL} alt="" className='overflow-hidden rounded-full' /></div>}
+    {user?<NavLink onClick={handleLogOut} className="btn">Logout</NavLink>:<NavLink to="/login" className="btn">Login</NavLink>}
+    
   </div>
 </div>
     );
