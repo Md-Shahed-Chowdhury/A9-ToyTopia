@@ -2,10 +2,42 @@
 import { NavLink } from 'react-router';
 import { FaGoogle } from "react-icons/fa";
 import { MyContext } from '../Provider/ContextProvider';
+import { use } from 'react';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
-  
+  const {emailLogin,googleLogin,setUser} = use(MyContext);
+
+  const handleLogin = (e) =>{
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    emailLogin(email,password).
+    then((res)=>{
+      const CurrentUser = res.user;
+      setUser(CurrentUser);
+      toast("Login Successful");
+    }).
+    catch((error)=>{
+      alert(error.message);
+    });
+}
+
+const handleGoogleLogin = () =>{
+    
+    googleLogin().
+    then((res)=>{
+      
+      const CurrentUser = res.user;
+      toast("Login Successful");
+      setUser(CurrentUser);
+    }).
+    catch((error)=>{
+      alert(error.message);
+    });
+  }
     return (
         <div>
               
@@ -22,7 +54,7 @@ const Login = () => {
                       You can explore interesting toys here.
                     </p>
                     <div className="card-body">
-                      <form>
+                      <form  onSubmit={handleLogin}>
                         <fieldset className="fieldset">
                           
                           <label className="label">Email</label>
@@ -52,7 +84,7 @@ const Login = () => {
                       </NavLink>
                     </p>
                     <hr />
-                    <button className="btn btn-secondary mt-4">
+                    <button onClick={handleGoogleLogin} className="btn btn-secondary mt-4">
                       <FaGoogle /> Continue with Google
                     </button>
                   </div>

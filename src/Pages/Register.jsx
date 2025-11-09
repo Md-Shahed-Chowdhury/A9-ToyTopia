@@ -5,9 +5,24 @@ import { NavLink } from "react-router";
 import { MyContext } from "../Provider/ContextProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../Auth/Auth.init";
+import { toast } from "react-toastify";
 
 const Register = () => {
-  const {emailRegister,setUser} = use(MyContext);
+  const {emailRegister,setUser,googleLogin} = use(MyContext);
+  
+  const handleGoogleLogin = () =>{
+    
+    googleLogin().
+    then((res)=>{
+      
+      const CurrentUser = res.user;
+      toast("Login Successful");
+      setUser(CurrentUser);
+    }).
+    catch((error)=>{
+      alert(error.message);
+    });
+  }
     const handleRegister = (e) =>{
         e.preventDefault();
         const form = e.target;
@@ -18,7 +33,7 @@ const Register = () => {
         emailRegister(email,password).
         then((user)=>
         { const CurrentUser = user.user;
-          
+          toast("Registered Successfully");
           updateProfile(auth.currentUser,{
             displayName:name,
             photoURL:photoUrl
@@ -91,7 +106,7 @@ const Register = () => {
               </NavLink>
             </p>
             <hr />
-            <button className="btn btn-secondary mt-4">
+            <button onClick={handleGoogleLogin} className="btn btn-secondary mt-4">
               <FaGoogle /> Continue with Google
             </button>
           </div>
