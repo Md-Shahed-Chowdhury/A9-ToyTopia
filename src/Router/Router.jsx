@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router";
+import React, { Suspense } from 'react';
 import Root from "../Layouts/Root";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/toyDetails/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: (<Suspense fallback={<div>loading......</div>}><ToyDetails></ToyDetails></Suspense>),
+        loader:()=> { return fetch('/allToys.json')}
       },
     ],
   },
