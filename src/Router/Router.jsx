@@ -14,8 +14,8 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path:"/",
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
         path: "login",
@@ -26,26 +26,26 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path:"/forget-password",
-        element:<ForgetPass></ForgetPass>
+        path: "/forget-password",
+        element: <ForgetPass></ForgetPass>,
       },
       {
-        path:"/home",
-        element:<Home></Home>
+        path: "/home",
+        element: <Home></Home>,
       },
       {
-        path:"/myProfile",
-        element:<MyProfile></MyProfile>
+        path: "/myProfile",
+        element: <MyProfile></MyProfile>,
       },
       {
-        path:"/toyDetails/:id",
-        element:<ToyDetails></ToyDetails>
-      }
+        path: "/toyDetails/:id",
+        element: <ToyDetails></ToyDetails>,
+      },
     ],
   },
   {
     path: "*",
     element: <PageNotFound></PageNotFound>,
-  }
+  },
 ]);
 export default router;

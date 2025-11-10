@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { use } from 'react';
+import { useParams } from 'react-router';
 
 const ToyDetails = () => {
+    const {id} = useParams();
     return (
         <div>
-            details
+            {id}
         </div>
     );
 };

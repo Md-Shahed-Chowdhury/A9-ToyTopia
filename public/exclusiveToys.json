@@ -1,0 +1,38 @@
+[
+  {
+    "toyId": 10,
+    "toyName": "Limited Edition Lego Star Cruiser",
+    "sellerName": "Galaxy Toys Hub",
+    "sellerEmail": "support@galaxytoys.com",
+    "price": 129.99,
+    "rating": 4.9,
+    "availableQuantity": 15,
+    "description": "The Limited Edition Lego Star Cruiser is a collector’s dream, featuring intricate space-inspired detailing and a sleek starship design. Built with over 2000 pieces, it offers a challenging yet satisfying building experience. The model includes adjustable wings, rotating engines, and a luminous cockpit. Perfect for Lego fans and collectors who love interstellar adventures. Each set comes with a certificate of authenticity and premium packaging.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2021/11/01/09/15/lego-6759832_1280.jpg",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 11,
+    "toyName": "Collector’s Edition Die-Cast Sports Car",
+    "sellerName": "SpeedMaster Collectibles",
+    "sellerEmail": "info@speedmaster.com",
+    "price": 149.0,
+    "rating": 4.8,
+    "availableQuantity": 10,
+    "description": "This Collector’s Edition Die-Cast Sports Car is a masterpiece for true car enthusiasts. Crafted from premium metal with hand-painted detailing, it perfectly replicates the aesthetics of a luxury supercar. Includes opening doors, functioning headlights, and soft rubber tires. Packaged in a velvet display box for showcasing. A rare collectible item that combines precision engineering with stunning design — perfect for display or gifting.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2016/03/17/10/29/bmw-1262701_1280.jpg",
+    "subCategory": "Collectibles"
+  },
+  {
+    "toyId": 12,
+    "toyName": "Handcrafted Wooden Chess Set Deluxe",
+    "sellerName": "Classic Minds",
+    "sellerEmail": "hello@classicminds.com",
+    "price": 89.5,
+    "rating": 4.7,
+    "availableQuantity": 25,
+    "description": "The Handcrafted Wooden Chess Set Deluxe combines artistry and intellect in one beautiful package. Each piece is individually carved from fine rosewood and maple, providing a luxurious feel and timeless appeal. The folding board doubles as a storage box for all pieces, making it perfect for travel and display. A wonderful choice for chess lovers, collectors, or anyone who appreciates craftsmanship and strategy. Elegant, durable, and made to inspire great minds.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2019/01/28/11/48/chess-3960184_1280.jpg",
+    "subCategory": "Classic Games"
+  }
+]

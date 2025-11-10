@@ -1,4 +1,3 @@
-
 import { use } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router";
@@ -8,50 +7,46 @@ import auth from "../Auth/Auth.init";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const {emailRegister,setUser,googleLogin} = use(MyContext);
-  
-  const handleGoogleLogin = () =>{
-    
-    googleLogin().
-    then((res)=>{
-      
-      const CurrentUser = res.user;
-      toast("Login Successful");
-      setUser(CurrentUser);
-    }).
-    catch((error)=>{
-      toast(error.message);
-    });
-  }
-    const handleRegister = (e) =>{
-        e.preventDefault();
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const photoUrl = form.photoUrl.value;
-        const password = form.password.value;
-        emailRegister(email,password).
-        then((user)=>
-        { const CurrentUser = user.user;
-          toast("Registered Successfully");
-          updateProfile(auth.currentUser,{
-            displayName:name,
-            photoURL:photoUrl
-          }).
-          then(()=>{
+  const { emailRegister, setUser, googleLogin } = use(MyContext);
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((res) => {
+        const CurrentUser = res.user;
+        toast("Login Successful");
+        setUser(CurrentUser);
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
+  };
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photoUrl = form.photoUrl.value;
+    const password = form.password.value;
+    emailRegister(email, password)
+      .then((user) => {
+        const CurrentUser = user.user;
+        toast("Registered Successfully");
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photoUrl,
+        })
+          .then(() => {
             console.log("Profile Updated");
-            setUser({...CurrentUser,displayName:name,photoURL:photoUrl});
-          }).
-          catch((error)=>toast(error.message));
-        }).
-        catch((error)=>{
-          toast(error.message);
-        });
-        
-    }
+            setUser({ ...CurrentUser, displayName: name, photoURL: photoUrl });
+          })
+          .catch((error) => toast(error.message));
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
+  };
   return (
     <div>
-      
       <div className="hero">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
@@ -65,7 +60,7 @@ const Register = () => {
               You can explore interesting toys here.
             </p>
             <div className="card-body">
-              <form onSubmit={handleRegister} >
+              <form onSubmit={handleRegister}>
                 <fieldset className="fieldset">
                   <label className="label">Name</label>
                   <input
@@ -99,7 +94,7 @@ const Register = () => {
                     name="password"
                     required
                   />
-                  <button className="btn btn-neutral mt-4" >Register</button>
+                  <button className="btn btn-neutral mt-4">Register</button>
                 </fieldset>
               </form>
             </div>
@@ -110,7 +105,10 @@ const Register = () => {
               </NavLink>
             </p>
             <hr />
-            <button onClick={handleGoogleLogin} className="btn btn-secondary mt-4">
+            <button
+              onClick={handleGoogleLogin}
+              className="btn btn-secondary mt-4"
+            >
               <FaGoogle /> Continue with Google
             </button>
           </div>

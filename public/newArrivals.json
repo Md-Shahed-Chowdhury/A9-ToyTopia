@@ -1,0 +1,38 @@
+[
+  {
+    "toyId": 7,
+    "toyName": "Rainbow Puzzle Cube",
+    "sellerName": "BrainyKids Store",
+    "sellerEmail": "hello@brainykids.com",
+    "price": 14.99,
+    "rating": 4.6,
+    "availableQuantity": 150,
+    "description": "A colorful twist-and-turn puzzle cube designed to challenge spatial reasoning and fine motor skills. Each face features a unique pattern to match, giving varying difficulty levels for beginners to experts. Compact and portable, it’s perfect for travel or classroom brain-teasers. Encourages logical thinking, patience, and hand-eye coordination while providing addictive, screen-free fun.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2022/08/01/22/03/rubiks-cube-7359071_1280.jpg",
+    "subCategory": "Puzzles"
+  },
+  {
+    "toyId": 8,
+    "toyName": "Solar Rover Robot",
+    "sellerName": "FuturePlay Robotics",
+    "sellerEmail": "support@futureplay.com",
+    "price": 54.99,
+    "rating": 4.7,
+    "availableQuantity": 60,
+    "description": "A build-and-drive solar-powered rover that introduces kids to basic electronics and renewable energy. The kit includes easy-to-assemble parts and a small solar panel that powers motion in daylight. Perfect for STEM learning, experimentation, and outdoor play — kids can test different terrains and configurations. Encourages curiosity about engineering and sustainable technology through hands-on exploration.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2014/08/31/22/25/robot-432453_1280.jpg",
+    "subCategory": "STEM"
+  },
+  {
+    "toyId": 9,
+    "toyName": "Dino Plush Cuddler",
+    "sellerName": "CozyToys Hub",
+    "sellerEmail": "hello@cozytoyshub.com",
+    "price": 24.99,
+    "rating": 4.9,
+    "availableQuantity": 95,
+    "description": "A super-soft, huggable dinosaur plush designed for comfort and imaginative play. Made from hypoallergenic materials with reinforced stitching for durability, it’s perfect for cuddles at bedtime or as a comforting companion during travel. Adorable design details and gentle colors make it a favorite for young children and collectors alike. Easy to care for and built to stay fluffy after gentle washing.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2016/11/23/15/40/teddy-bear-1853609_1280.jpg",
+    "subCategory": "Plush Toys"
+  }
+]
