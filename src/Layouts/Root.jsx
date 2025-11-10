@@ -5,9 +5,9 @@ import Footer from '../Components/Footer';
 
 const Root = () => {
     return (
-        <div className="bg-base-200 min-h-screen max-w-[1550px] mx-auto flex flex-col justify-between">
+        <div className="bg-base-200 min-h-screen max-w-[1550px] mx-auto ">
             <Nav></Nav>
-            <main>
+            <main className='min-h-[calc(100vh-285px)]'>
         <Outlet></Outlet>
             </main>
             <Footer>

@@ -1,17 +1,21 @@
 
-import { NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import '../App.css';
-import { use } from 'react';
+import { use, useState } from 'react';
 import { MyContext } from '../Provider/ContextProvider';
 import { toast } from 'react-toastify';
 
 
 const Nav = () => {
+
   const {user,logOut} = use(MyContext);
+  const [hover,setHover] =useState(false);
+  const navigate=useNavigate();
   const handleLogOut = () =>{
     logOut().
     then(()=>{
       toast("Logged Out Successfully");
+      navigate('/home');
     }).
     catch((error)=>{
       toast(error.message);
@@ -43,8 +47,11 @@ const Nav = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    {user && <div className='rounded-full w-10 mr-2'><img src={user.photoURL} alt="" className='overflow-hidden rounded-full' /></div>}
-    {user?<NavLink onClick={handleLogOut} className="btn">Logout</NavLink>:<NavLink to="/login" className="btn">Login</NavLink>}
+    {user && <div className='rounded-full w-10 mr-2 relative'><img src={user.photoURL} alt="" className='overflow-hidden rounded-full' onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}/></div>}
+    {
+      hover && <div className='absolute top-5 right-35 bg-gray-800 text-white px-2 py-1 rounded-md'>{user.displayName}</div>
+    }
+    {user?<Link onClick={handleLogOut} className="btn">Logout</Link>:<NavLink to="/login" className="btn">Login</NavLink>}
     
   </div>
 </div>
