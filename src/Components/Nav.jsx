@@ -31,7 +31,7 @@ const Nav = () => {
       </div>
       <ul
         tabIndex="-1"
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-bold text-md">
         <li><NavLink to="/home">Home</NavLink></li>
         <li><NavLink to="/myProfile">My Profile</NavLink></li>
         <li><NavLink to="/other">Other</NavLink></li>
@@ -40,7 +40,7 @@ const Nav = () => {
     <a className="btn btn-ghost text-xl">ToyTopia</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 font-bold text-md">
       <li><NavLink to="/home">Home</NavLink></li>
         <li><NavLink to="/myProfile">My Profile</NavLink></li>
         <li><NavLink to="/other">Other</NavLink></li>

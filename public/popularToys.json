@@ -1,0 +1,74 @@
+[
+  {
+    "toyId": 1,
+    "toyName": "Lego Classic Bricks",
+    "sellerName": "Toys R Us Local",
+    "sellerEmail": "contact@toysruslocal.com",
+    "price": 49.99,
+    "rating": 4.7,
+    "availableQuantity": 75,
+    "description": "A timeless set of colorful Lego bricks designed to inspire creativity and problem-solving in children of all ages. This set includes a variety of shapes and colors, encouraging free building and imaginative play. Kids can build houses, cars, animals, or anything their mind envisions. The pieces fit easily together, ensuring a satisfying building experience. Great for developing fine motor skills and spatial awareness. A perfect starter kit for every young builder.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2015/11/04/20/11/lego-1023256_1280.jpg",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 2,
+    "toyName": "Hot Wheels Super Speed Track",
+    "sellerName": "PlayWorld Toys",
+    "sellerEmail": "support@playworld.com",
+    "price": 35.5,
+    "rating": 4.5,
+    "availableQuantity": 40,
+    "description": "The Hot Wheels Super Speed Track lets kids experience the ultimate thrill of racing. Designed with durable loops, high-speed curves, and launch zones for exciting stunts. Cars zoom across the track with lightning-fast speed, creating nonstop excitement. Perfect for solo play or friendly competitions. Made from sturdy materials to ensure long-lasting fun. Encourages hand-eye coordination, timing, and competitive spirit in every young racer.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2018/08/03/16/53/toys-3582278_1280.jpg",
+    "subCategory": "Vehicles"
+  },
+  {
+    "toyId": 3,
+    "toyName": "Barbie Dreamhouse Doll Set",
+    "sellerName": "Happy Dolls Store",
+    "sellerEmail": "hello@happydolls.com",
+    "price": 89.99,
+    "rating": 4.9,
+    "availableQuantity": 20,
+    "description": "The Barbie Dreamhouse Doll Set brings imagination to life with its luxurious three-story home and stylish design. It includes multiple rooms, furniture, and a working elevator for endless storytelling. With realistic details like lights, sounds, and décor, kids can create their own dream world. The set encourages role play, creativity, and social interaction. Perfect for children who love fashion, design, and adventures with friends. A premium gift choice for any Barbie fan.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/10/12/22/23/bazaar-2846247_1280.jpg",
+    "subCategory": "Dolls"
+  },
+  {
+    "toyId": 4,
+    "toyName": "NERF Elite Blaster",
+    "sellerName": "Adventure Toys BD",
+    "sellerEmail": "info@adventuretoysbd.com",
+    "price": 59.0,
+    "rating": 4.6,
+    "availableQuantity": 55,
+    "description": "Gear up for high-energy battles with the NERF Elite Blaster. Engineered for precision and power, this blaster shoots soft darts up to 90 feet. The quick reload mechanism keeps the action going without interruption. Lightweight yet durable for long play sessions indoors or outdoors. Encourages teamwork, strategy, and active play among kids. Includes safety-tested darts designed for fun and safe shooting experiences. Every mission feels like an epic adventure.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2018/08/03/11/14/nerf-3581647_1280.jpg",
+    "subCategory": "Action Toys"
+  },
+  {
+    "toyId": 5,
+    "toyName": "Fisher-Price Musical Piano",
+    "sellerName": "BabyJoy Shop",
+    "sellerEmail": "support@babyjoy.com",
+    "price": 42.99,
+    "rating": 4.8,
+    "availableQuantity": 65,
+    "description": "The Fisher-Price Musical Piano turns learning into playtime fun. It features bright colors, gentle lights, and playful melodies that introduce children to music, numbers, and colors. Each key plays a unique tune, encouraging curiosity and rhythm recognition. Made from safe, baby-friendly materials with rounded edges. Ideal for developing fine motor skills and auditory learning. A joyful way to nurture your child’s early cognitive and sensory growth.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2016/01/28/17/05/piano-1166656_1280.jpg",
+    "subCategory": "Musical Toys"
+  },
+  {
+    "toyId": 6,
+    "toyName": "Remote Control Monster Truck",
+    "sellerName": "SpeedZone BD",
+    "sellerEmail": "sales@speedzonebd.com",
+    "price": 65.75,
+    "rating": 4.4,
+    "availableQuantity": 35,
+    "description": "The Remote Control Monster Truck is built for speed, power, and performance. Its shock-absorbing wheels and high-grip tires make it perfect for any terrain — sand, grass, or gravel. With responsive steering and long battery life, the fun never stops. Designed to endure rough play and crashes without damage. A fantastic choice for kids and hobbyists who love outdoor racing challenges. Brings a real sense of adventure and control to every race.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2021/07/15/05/41/model-car-6467547_1280.jpg",
+    "subCategory": "Remote Control"
+  }
+]

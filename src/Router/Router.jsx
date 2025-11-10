@@ -5,6 +5,8 @@ import Register from "../Pages/Register";
 import ForgetPass from "../Pages/ForgetPass";
 import Home from "../Pages/Home";
 import MyProfile from "../Pages/MyProfile";
+import PageNotFound from "../Pages/PageNotFound";
+import ToyDetails from "../Pages/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -35,11 +37,15 @@ const router = createBrowserRouter([
         path:"/myProfile",
         element:<MyProfile></MyProfile>
       },
+      {
+        path:"/toyDetails/:id",
+        element:<ToyDetails></ToyDetails>
+      }
     ],
   },
   {
     path: "*",
-    element: <div>404 Not Found</div>,
+    element: <PageNotFound></PageNotFound>,
   }
 ]);
 export default router;
