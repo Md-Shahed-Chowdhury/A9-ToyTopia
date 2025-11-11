@@ -8,6 +8,8 @@ import Home from "../Pages/Home";
 import MyProfile from "../Pages/MyProfile";
 import PageNotFound from "../Pages/PageNotFound";
 import ToyDetails from "../Pages/ToyDetails";
+import AllToys from "../Pages/AllToys";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -40,9 +42,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/toyDetails/:id",
-        element: (<Suspense fallback={<div>loading......</div>}><ToyDetails></ToyDetails></Suspense>),
+        element: <ToyDetails></ToyDetails>,
         loader:()=> { return fetch('/allToys.json')}
       },
+      {
+        path: "/allToys",
+        element:(
+          <PrivateRoute>
+            <AllToys></AllToys>
+          </PrivateRoute>
+        ),
+        loader: () => {return fetch('/allToys.json')}
+      }
     ],
   },
   {

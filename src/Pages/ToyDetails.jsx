@@ -1,7 +1,6 @@
 import React, { use } from 'react';
 import { useParams,useLoaderData } from 'react-router';
 import { FaStar } from 'react-icons/fa';
-import auth from "../Auth/Auth.init";
 import { toast } from "react-toastify";
 import { MyContext } from '../Provider/ContextProvider';
 const ToyDetails = () => {
@@ -11,7 +10,8 @@ const ToyDetails = () => {
     const toy = data.find(t => t.toyId == id);
     const handleTryNow = (e) =>{
       e.preventDefault();
-      toast(`Thank you ${user?.displayName} for trying ${toy.toyName}!`);
+      const name = e.target.name.value;
+      toast(`Thank you ${name} for trying ${toy.toyName}!`);
       }
     return (
         <div className="bg-base-200">

@@ -34,6 +34,7 @@ const logOut = () => {
 };
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const contextData = {
     emailRegister,
     user,
@@ -42,10 +43,13 @@ const ContextProvider = ({ children }) => {
     emailLogin,
     passReset,
     logOut,
+    loading,
+    setLoading,
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setLoading(false);
       setUser(currentUser);
     });
     return () => unsubscribe();

@@ -51,7 +51,7 @@ const Nav = () => {
               <NavLink to="/myProfile">My Profile</NavLink>
             </li>
             <li>
-              <NavLink to="/other">Other</NavLink>
+              <NavLink to="/allToys">All Toys</NavLink>
             </li>
           </ul>
         </div>
@@ -66,7 +66,7 @@ const Nav = () => {
             <NavLink to="/myProfile">My Profile</NavLink>
           </li>
           <li>
-            <NavLink to="/other">Other</NavLink>
+            <NavLink to="/allToys">All Toys</NavLink>
           </li>
         </ul>
       </div>
