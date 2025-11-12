@@ -38,11 +38,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/myProfile",
-        element: <MyProfile></MyProfile>,
+        element: (
+          <PrivateRoute>
+            <MyProfile></MyProfile>,
+          </PrivateRoute>
+        )
       },
       {
         path: "/toyDetails/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
         loader:()=> { return fetch('/allToys.json')}
       },
       {

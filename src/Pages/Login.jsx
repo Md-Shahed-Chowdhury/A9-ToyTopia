@@ -1,5 +1,5 @@
 
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import { FaGoogle } from "react-icons/fa";
 import { MyContext } from '../Provider/ContextProvider';
 import { use, useState } from 'react';
@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 const Login = () => {
   const [email,setEmail]=useState(null);
   const {emailLogin,googleLogin,setUser} = use(MyContext);
+  const {state} = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (e) =>{
     e.preventDefault();
@@ -20,6 +22,7 @@ const Login = () => {
       const CurrentUser = res.user;
       setUser(CurrentUser);
       toast("Login Successful");
+      state? navigate(state): navigate("/");
     }).
     catch((error)=>{
       toast(error.message);
@@ -34,6 +37,7 @@ const handleGoogleLogin = () =>{
       const CurrentUser = res.user;
       toast("Login Successful");
       setUser(CurrentUser);
+      state? navigate(state): navigate("/");
     }).
     catch((error)=>{
       toast(error.message);

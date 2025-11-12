@@ -1,10 +1,14 @@
 import React, { use } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate, useLocation, useNavigate } from "react-router";
 import { MyContext } from "../Provider/ContextProvider";
 import { GridLoader } from "react-spinners";
 
+
 const PrivateRoute = ({ children }) => {
 //   const navigate = useNavigate();
+      const location = useLocation();
+      console.log("private route location:", location);
+      
 
   const { user,loading } = use(MyContext);
 //   console.log("private route user:", user);
@@ -13,7 +17,7 @@ const PrivateRoute = ({ children }) => {
     }
   if (!user) {
     // navigate("/login");
-    return <Navigate to="/login" replace></Navigate>;
+    return <Navigate to="/login" state={location.pathname}></Navigate>;
   } else {
     return children;
   }

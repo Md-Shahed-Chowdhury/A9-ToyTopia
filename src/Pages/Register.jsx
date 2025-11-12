@@ -1,6 +1,6 @@
 import { use } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { MyContext } from "../Provider/ContextProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../Auth/Auth.init";
@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const { emailRegister, setUser, googleLogin } = use(MyContext);
+  const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
     googleLogin()
@@ -15,6 +16,7 @@ const Register = () => {
         const CurrentUser = res.user;
         toast("Login Successful");
         setUser(CurrentUser);
+        navigate("/");
       })
       .catch((error) => {
         toast(error.message);
@@ -38,6 +40,7 @@ const Register = () => {
           .then(() => {
             console.log("Profile Updated");
             setUser({ ...CurrentUser, displayName: name, photoURL: photoUrl });
+            navigate("/");
           })
           .catch((error) => toast(error.message));
       })
