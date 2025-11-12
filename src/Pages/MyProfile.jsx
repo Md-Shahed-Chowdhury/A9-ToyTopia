@@ -26,11 +26,12 @@ const MyProfile = () => {
     return (
         <div className='p-5'>
            <h1 className="text-5xl font-bold text-center text-secondary">My Profile</h1>
-            <div className='flex flex-col md:flex-row justify-center items-start md:items-center gap-5 md:gap-10 mt-10'>
-                <div>
-            <img src={user.photoURL} className='w-70 shadow-black shadow-lg' />
-            <h2 className='text-lg md:text-2xl font-semibold'>Email: {user.email}</h2>
+            <div className='flex flex-col md:flex-row justify-center items-start md:items-center gap-5  mt-10'>
+                <div className='w-[calc(100vw-40px)] md:w-100'>
+            <img src={user.photoURL} className='w-[calc(100vw-40px)] md:w-70 shadow-secondary shadow-lg mb-2' />
             <h2 className='text-lg md:text-3xl font-semibold'>Name: {user.displayName}</h2>
+            <h2 className='text-lg md:text-2xl font-semibold'>Email: {user.email}</h2>
+            <h2 className=' font-semibold ' >PhotoURL: <a href={user.photoURL} className='text-blue-400 hover:underline block truncate w-[300px]' target="_blank">{user.photoURL}</a></h2>
  
             </div>
             <div className='w-70 sm:w-100'>

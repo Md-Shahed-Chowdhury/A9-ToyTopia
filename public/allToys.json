@@ -142,5 +142,41 @@
     "description": "The Handcrafted Wooden Chess Set Deluxe combines artistry and intellect in one beautiful package. Each piece is individually carved from fine rosewood and maple, providing a luxurious feel and timeless appeal. The folding board doubles as a storage box for all pieces, making it perfect for travel and display. A wonderful choice for chess lovers, collectors, or anyone who appreciates craftsmanship and strategy. Elegant, durable, and made to inspire great minds.",
     "pictureURL": "https://cdn.pixabay.com/photo/2019/01/28/11/48/chess-3960184_1280.jpg",
     "subCategory": "Classic Games"
+  },
+  {
+    "toyId": 13,
+    "toyName": "Marvel Hero Action Figure Set",
+    "sellerName": "HeroVerse Toys",
+    "sellerEmail": "sales@heroversetoys.com",
+    "price": 79.99,
+    "rating": 4.8,
+    "availableQuantity": 30,
+    "description": "The Marvel Hero Action Figure Set brings together your favorite superheroes in one epic collection. Each 6-inch figure is fully poseable, featuring detailed costumes, accessories, and authentic facial expressions. Perfect for action-packed play or display. Made from premium, durable plastic for long-lasting enjoyment. Includes characters like Iron Man, Spider-Man, and Captain America — ready to save the world again and again.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2019/11/04/02/06/iron-man-4599990_1280.jpg",
+    "subCategory": "Action Toys"
+  },
+  {
+    "toyId": 14,
+    "toyName": "Interactive Talking Parrot",
+    "sellerName": "SmartPet World",
+    "sellerEmail": "support@smartpetworld.com",
+    "price": 58.5,
+    "rating": 4.5,
+    "availableQuantity": 50,
+    "description": "The Interactive Talking Parrot repeats what you say in a funny voice, flaps its wings, and moves its beak like a real bird. A fun and educational toy that promotes speech development and social interaction. Soft plush exterior with built-in motion sensors and rechargeable battery. Great for kids who love animals or interactive learning experiences.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2018/10/10/00/57/bird-3736246_1280.jpg",
+    "subCategory": "Interactive Toys"
+  },
+  {
+    "toyId": 15,
+    "toyName": "Glow-in-the-Dark Galaxy Slime Kit",
+    "sellerName": "CreativeLab Kids",
+    "sellerEmail": "info@creativelabkids.com",
+    "price": 29.99,
+    "rating": 4.6,
+    "availableQuantity": 80,
+    "description": "The Glow-in-the-Dark Galaxy Slime Kit lets kids create their own shimmering slime inspired by outer space. Includes glow pigments, glitter, safe non-toxic glue, and activator for mess-free fun. Encourages creativity, sensory exploration, and hands-on STEM learning. Perfect for parties, science projects, or rainy-day playtime.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2022/10/16/17/01/mushrooms-7525556_1280.jpg",
+    "subCategory": "STEM"
   }
 ]

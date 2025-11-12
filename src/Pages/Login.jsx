@@ -1,6 +1,6 @@
 
 import { NavLink, useLocation, useNavigate } from 'react-router';
-import { FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { MyContext } from '../Provider/ContextProvider';
 import { use, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -11,6 +11,7 @@ const Login = () => {
   const {emailLogin,googleLogin,setUser} = use(MyContext);
   const {state} = useLocation();
   const navigate = useNavigate();
+  const [visible,setVisible] =useState(false);
 
   const handleLogin = (e) =>{
     e.preventDefault();
@@ -30,6 +31,7 @@ const Login = () => {
 }
 
 const handleGoogleLogin = () =>{
+
     
     googleLogin().
     then((res)=>{
@@ -73,15 +75,22 @@ const handleGoogleLogin = () =>{
                           />
                           
                           <label className="label">Password</label>
-                          <input
-                            type="password"
-                            className="input"
+                          <div className=' relative'>
+                            <input
+                          type={visible ? "text" : "password"}
+                            
+                            className="input "
                             placeholder="Password"
                             name="password"
                             required
                           />
+                          
+                          
+                          <button onClick={()=>setVisible(!visible)} type="button" className='absolute top-2 right-2 md:right-10 lg:right-5  text-lg'>{visible?<FaEye />:<FaEyeSlash />}
+                          </button>
+                          </div>
                           <div><NavLink className="link link-hover" to="/forget-password" state={email}>Forgot password?</NavLink></div>
-                          <button className="btn btn-neutral mt-4">Login</button>
+                          <button  className="btn btn-neutral mt-4">Login</button>
                         </fieldset>
                       </form>
                     </div>

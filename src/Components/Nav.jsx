@@ -3,6 +3,7 @@ import "../App.css";
 import { use, useState } from "react";
 import { MyContext } from "../Provider/ContextProvider";
 import { toast } from "react-toastify";
+import { MdLogin, MdLogout } from "react-icons/md";
 
 const Nav = () => {
   const { user, logOut } = use(MyContext);
@@ -88,11 +89,14 @@ const Nav = () => {
           </div>
         )}
         {user ? (
-          <Link onClick={handleLogOut} className="btn">
+          <Link onClick={handleLogOut} className="btn flex items-center">
+            <MdLogout /> 
             Logout
           </Link>
         ) : (
-          <NavLink to="/login" className="btn">
+          <NavLink to="/login" className="btn flex items-center">
+            <MdLogin />
+
             Login
           </NavLink>
         )}

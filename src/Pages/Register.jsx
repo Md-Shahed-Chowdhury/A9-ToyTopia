@@ -1,5 +1,5 @@
-import { use } from "react";
-import { FaGoogle } from "react-icons/fa";
+import { use, useState } from "react";
+import { FaGoogle,FaEye, FaEyeSlash } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router";
 import { MyContext } from "../Provider/ContextProvider";
 import { updateProfile } from "firebase/auth";
@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 const Register = () => {
   const { emailRegister, setUser, googleLogin } = use(MyContext);
   const navigate = useNavigate();
+  const [visible,setVisible] =useState(false);
 
   const handleGoogleLogin = () => {
     googleLogin()
@@ -90,13 +91,20 @@ const Register = () => {
                     required
                   />
                   <label className="label">Password</label>
-                  <input
-                    type="password"
-                    className="input"
-                    placeholder="Password"
-                    name="password"
-                    required
-                  />
+                  <div className=' relative'>
+                                              <input
+                                            type={visible ? "text" : "password"}
+                                              
+                                              className="input"
+                                              placeholder="Password"
+                                              name="password"
+                                              required
+                                            />
+                                            
+                                            
+                                            <button onClick={()=>setVisible(!visible)} type="button" className='absolute top-2 right-2 md:right-10 lg:right-5  text-lg'>{visible?<FaEye />:<FaEyeSlash />}
+                                            </button>
+                                            </div>
                   <button className="btn btn-neutral mt-4">Register</button>
                 </fieldset>
               </form>
