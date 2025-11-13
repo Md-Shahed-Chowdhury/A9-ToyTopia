@@ -60,7 +60,8 @@ const router = createBrowserRouter([
             <AllToys></AllToys>
           </PrivateRoute>
         ),
-        loader: () => {return fetch('/allToys.json')}
+        loader: () => {return fetch('/allToys.json')},
+        
       }
     ],
   },

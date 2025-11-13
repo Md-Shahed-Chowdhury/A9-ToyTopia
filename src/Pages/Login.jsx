@@ -4,7 +4,7 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { MyContext } from '../Provider/ContextProvider';
 import { use, useState } from 'react';
 import { toast } from 'react-toastify';
-
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [email,setEmail]=useState(null);
@@ -47,7 +47,9 @@ const handleGoogleLogin = () =>{
   }
     return (
         <div>
-              
+              <Helmet>
+        <title>Login</title>
+      </Helmet>
               <div className="hero">
                 <div className="hero-content flex-col">
                   <div className="text-center lg:text-left">
@@ -79,7 +81,7 @@ const handleGoogleLogin = () =>{
                             <input
                           type={visible ? "text" : "password"}
                             
-                            className="input "
+                            className="input"
                             placeholder="Password"
                             name="password"
                             required

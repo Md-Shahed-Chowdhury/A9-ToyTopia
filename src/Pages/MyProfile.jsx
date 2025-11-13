@@ -3,7 +3,7 @@ import { MyContext } from '../Provider/ContextProvider';
 import { updateProfile } from 'firebase/auth';
 import auth from '../Auth/Auth.init';
 import { toast } from 'react-toastify';
-
+import { Helmet } from "react-helmet";
 const MyProfile = () => {
     const {setUser,user} = use(MyContext);
     const handleProfileUpdate = (e) =>{
@@ -25,6 +25,9 @@ const MyProfile = () => {
     
     return (
         <div className='p-5'>
+          <Helmet>
+        <title>Personal Profile</title>
+      </Helmet>
            <h1 className="text-5xl font-bold text-center text-secondary">My Profile</h1>
             <div className='flex flex-col md:flex-row justify-center items-start md:items-center gap-5  mt-10'>
                 <div className='w-[calc(100vw-40px)] md:w-100'>

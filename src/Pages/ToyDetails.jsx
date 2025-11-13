@@ -3,6 +3,7 @@ import { useParams,useLoaderData } from 'react-router';
 import { FaStar } from 'react-icons/fa';
 import { toast } from "react-toastify";
 import { MyContext } from '../Provider/ContextProvider';
+import { Helmet } from "react-helmet";
 const ToyDetails = () => {
     const {id} = useParams();
     const {user} = use(MyContext)
@@ -15,6 +16,9 @@ const ToyDetails = () => {
       }
     return (
         <div className="bg-base-200">
+          <Helmet>
+        <title>{toy.toyName}</title>
+      </Helmet>
   <div className="flex flex-col lg:flex-row  p-10 gap-5">
     <img
       src={toy.pictureURL}

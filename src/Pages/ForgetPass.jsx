@@ -2,7 +2,7 @@ import React, { use } from "react";
 import { NavLink, useLocation } from "react-router";
 import { MyContext } from "../Provider/ContextProvider";
 import { toast } from "react-toastify";
-
+import { Helmet } from "react-helmet";
 const ForgetPass = () => {
   const { state } = useLocation();
   const { passReset } = use(MyContext);
@@ -22,6 +22,9 @@ const ForgetPass = () => {
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
+      <Helmet>
+        <title>Change Password</title>
+      </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Reset Your Password!</h1>

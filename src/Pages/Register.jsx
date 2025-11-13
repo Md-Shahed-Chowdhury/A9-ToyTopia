@@ -5,6 +5,7 @@ import { MyContext } from "../Provider/ContextProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../Auth/Auth.init";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { emailRegister, setUser, googleLogin } = use(MyContext);
@@ -51,6 +52,9 @@ const Register = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="hero">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">

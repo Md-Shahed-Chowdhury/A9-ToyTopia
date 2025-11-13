@@ -13,7 +13,7 @@ const Nav = () => {
     logOut()
       .then(() => {
         toast("Logged Out Successfully");
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         toast(error.message);
@@ -46,7 +46,7 @@ const Nav = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-bold text-md"
           >
             <li>
-              <NavLink to="/home">Home</NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
               <NavLink to="/myProfile">My Profile</NavLink>
@@ -61,7 +61,7 @@ const Nav = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-bold text-md">
           <li>
-            <NavLink to="/home">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <NavLink to="/myProfile">My Profile</NavLink>
