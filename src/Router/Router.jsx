@@ -61,6 +61,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => {return fetch('/allToys.json')},
+        hydrateFallbackElement:<div>loading.....</div>
         
       }
     ],

@@ -2,7 +2,8 @@ import React, { use } from "react";
 import { NavLink, useLocation } from "react-router";
 import { MyContext } from "../Provider/ContextProvider";
 import { toast } from "react-toastify";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
+
 const ForgetPass = () => {
   const { state } = useLocation();
   const { passReset } = use(MyContext);

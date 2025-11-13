@@ -16,7 +16,7 @@ const ExclusiveToys = () =>  {
             {
                 toys.map(toy=>{
                     return (
-                        <ToyCard toyName={toy.toyName} pictureURL={toy.pictureURL} rating={toy.rating} availableQuantity={toy.availableQuantity} price={toy.price}  toyId ={toy.toyId}></ToyCard>
+                        <ToyCard key={toy.toyId} toyName={toy.toyName} pictureURL={toy.pictureURL} rating={toy.rating} availableQuantity={toy.availableQuantity} price={toy.price}  toyId ={toy.toyId}></ToyCard>
                     )
                     
                 })      

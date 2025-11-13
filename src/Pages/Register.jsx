@@ -1,16 +1,17 @@
 import { use, useState } from "react";
-import { FaGoogle,FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router";
 import { MyContext } from "../Provider/ContextProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../Auth/Auth.init";
 import { toast } from "react-toastify";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { emailRegister, setUser, googleLogin } = use(MyContext);
+  const [error,setError] = useState("");
   const navigate = useNavigate();
-  const [visible,setVisible] =useState(false);
+  const [visible, setVisible] = useState(false);
 
   const handleGoogleLogin = () => {
     googleLogin()
@@ -26,11 +27,18 @@ const Register = () => {
   };
   const handleRegister = (e) => {
     e.preventDefault();
+    const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const photoUrl = form.photoUrl.value;
     const password = form.password.value;
+    setError('');
+    if(!regex.test(password)){
+      setError("Password should have atleast 6 characters,1 lowercase,1 uppercase letter!");
+      return;
+    }
     emailRegister(email, password)
       .then((user) => {
         const CurrentUser = user.user;
@@ -95,20 +103,23 @@ const Register = () => {
                     required
                   />
                   <label className="label">Password</label>
-                  <div className=' relative'>
-                                              <input
-                                            type={visible ? "text" : "password"}
-                                              
-                                              className="input"
-                                              placeholder="Password"
-                                              name="password"
-                                              required
-                                            />
-                                            
-                                            
-                                            <button onClick={()=>setVisible(!visible)} type="button" className='absolute top-2 right-2 md:right-10 lg:right-5  text-lg'>{visible?<FaEye />:<FaEyeSlash />}
-                                            </button>
-                                            </div>
+                  <div className=" relative">
+                    <input
+                      type={visible ? "text" : "password"}
+                      className="input"
+                      placeholder="Password"
+                      name="password"
+                      required
+                    />
+
+                    <button
+                      onClick={() => setVisible(!visible)}
+                      type="button"
+                      className="absolute top-2 right-2 md:right-10 lg:right-5  text-lg"
+                    >
+                      {visible ? <FaEye /> : <FaEyeSlash />}
+                    </button>
+                  </div>
                   <button className="btn btn-neutral mt-4">Register</button>
                 </fieldset>
               </form>
@@ -126,6 +137,7 @@ const Register = () => {
             >
               <FaGoogle /> Continue with Google
             </button>
+            {error && <div className="font-semibold text-red-600 text-lg">{error}</div>}
           </div>
         </div>
       </div>
