@@ -8,12 +8,12 @@ import { ToastContainer } from "react-toastify";
 import { HelmetProvider } from "react-helmet-async";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  
     <HelmetProvider>
       <ContextProvider>
       <RouterProvider router={router} />
       <ToastContainer />
     </ContextProvider>
     </HelmetProvider>
-  </StrictMode>
+  
 );

@@ -51,7 +51,8 @@ const router = createBrowserRouter([
             <ToyDetails></ToyDetails>
           </PrivateRoute>
         ),
-        loader:()=> { return fetch('/allToys.json')}
+        loader:()=> { return fetch('/allToys.json')},
+        hydrateFallbackElement:<div>loading.....</div>
       },
       {
         path: "/allToys",

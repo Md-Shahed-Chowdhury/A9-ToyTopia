@@ -18,7 +18,7 @@ const ToyDetails = () => {
   return (
     <div className="bg-base-200">
       <Helmet>
-        <title>{toy.toyid}</title>
+        <title>{toy.toyName}</title>
       </Helmet>
       <div className="flex flex-col lg:flex-row  p-10 gap-5">
         <img
